@@ -28,14 +28,20 @@
             grid-template-columns: 1fr; /* Mobile First: Single column */
         }
 
-        /* --- Image Side (Now visible on mobile) --- */
+        /* --- Image Side (Updated Tech Image) --- */
         .image-side {
-            background: url('https://images.unsplash.com/photo-1531315630201-bb15abeb1653?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80') no-repeat center center/cover;
+            /* --- New Tech-Oriented Image --- */
+            background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
             /* --- Adjust height for mobile --- */
             min-height: 250px;
-            /* display: none; */ /* REMOVED: Image is now visible by default */
-            width: 100%; /* Ensure it takes full width within its grid area */
+            width: 100%;
         }
+        /* --- Other Tech Image Options (Replace URL above if preferred) --- */
+        /* Option B: Network Lines */
+        /* background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover; */
+        /* Option C: Abstract Data */
+        /* background: url('https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80') no-repeat center center/cover; */
+
 
         /* --- Content Side --- */
         .content {
@@ -100,36 +106,15 @@
         /* --- Tablet & Desktop Styles (Overrides) --- */
         @media (min-width: 768px) {
             .container {
-                /* Switch to two columns */
                 grid-template-columns: 1fr 1.1fr;
             }
-
-            .image-side {
-                 /* --- Image height adjusts naturally in grid --- */
-                min-height: auto;
-                /* display: block; */ /* REMOVED: No longer needed */
-            }
-
-            .content {
-                /* Restore larger padding */
-                padding: 50px 45px;
-            }
-
-             .content h1 {
-                 font-size: 2.4rem; text-align: left; max-width: 90%;
-             }
-
-             .content p.subtitle {
-                 font-size: 1.1rem; text-align: left; margin-bottom: 35px; max-width: 95%;
-             }
-
-             .signup-form label {
-                 font-size: 0.95rem;
-             }
-              .signup-form input[type="email"],
-              .signup-form button {
-                  padding: 15px; font-size: 1.1rem;
-             }
+            .image-side { min-height: auto; }
+            .content { padding: 50px 45px; }
+            .content h1 { font-size: 2.4rem; text-align: left; max-width: 90%; }
+            .content p.subtitle { font-size: 1.1rem; text-align: left; margin-bottom: 35px; max-width: 95%; }
+            .signup-form label { font-size: 0.95rem; }
+            .signup-form input[type="email"],
+            .signup-form button { padding: 15px; font-size: 1.1rem; }
         }
 
     </style>
@@ -137,13 +122,12 @@
 <body>
 
     <div class="container">
-        <!-- Image Side (Now visible on mobile too) -->
-        <div class="image-side" role="img" aria-label="Abstract background representing trends and insights"></div>
+        <!-- Image Side (Updated aria-label) -->
+        <div class="image-side" role="img" aria-label="Close-up of a computer circuit board representing technology trends"></div>
 
         <!-- Content Side -->
         <div class="content">
             <h1>Stay Ahead of the Curve with The Trend Report</h1>
-
             <p class="subtitle">
                 Navigate constant change with confidence. The Trend Report delivers comprehensive analysis and curated insights into the emerging tech, business, and cultural trends shaping our future. Go beyond the headlines to understand what matters, spot opportunities, and make smarter decisions.
             </p>
