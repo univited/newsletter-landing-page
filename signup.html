@@ -2,83 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Crucial for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Trend Report | Comprehensive Insights for What's Next</title> <!-- Updated Title -->
+    <title>The Trend Report | Comprehensive Insights for What's Next</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         /* --- Basic Reset & Setup --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; } /* Optional: Smooth scroll */
         body {
             font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333;
             background-color: #f8f9fa; display: flex; justify-content: center;
-            align-items: center; min-height: 100vh; padding: 20px;
+            align-items: center; min-height: 100vh;
+            /* Consistent padding around the container */
+            padding: 20px;
         }
+
         /* --- Main Container --- */
         .container {
             background-color: #ffffff; border-radius: 12px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            max-width: 950px; width: 100%; display: grid; grid-template-columns: 1fr;
+            max-width: 950px; width: 100%;
+            display: grid;
+            /* --- Mobile First: Default to single column --- */
+            grid-template-columns: 1fr;
         }
-        @media (min-width: 768px) { .container { grid-template-columns: 1fr 1.1fr; } }
 
-        /* --- Image Side (Updated Image Options) --- */
+        /* --- Image Side --- */
         .image-side {
-            /* Option 1: Abstract Gradient/Waves (Current) */
+             /* Image Option 1: Abstract Gradient/Waves (Current) */
             background: url('https://images.unsplash.com/photo-1531315630201-bb15abeb1653?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80') no-repeat center center/cover;
-
-            /* Option 2: Subtle Network/Connection (Replace URL above if you prefer this) */
-            /* background: url('https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover; */
-
-            /* Option 3: Minimalist Landscape/Horizon (Replace URL above if you prefer this) */
-            /* background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover; */
-
-            min-height: 300px; display: none;
+            min-height: 250px; /* Adjust height for mobile if needed */
+            /* --- Mobile First: Hide image by default --- */
+            display: none;
         }
-        @media (min-width: 768px) { .image-side { display: block; min-height: auto; } }
 
         /* --- Content Side --- */
-        .content { padding: 40px 30px; display: flex; flex-direction: column; justify-content: center; }
-        @media (min-width: 768px) { .content { padding: 50px 45px; } }
+        .content {
+             /* --- Mobile First: Optimized padding for smaller screens --- */
+            padding: 40px 25px; /* Reduced L/R padding */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
         .content h1 {
-            font-size: 2.4rem; font-weight: 700; color: #2c3e50;
-            margin-bottom: 18px; line-height: 1.25; max-width: 90%;
+            /* --- Mobile First: Font size and alignment --- */
+            font-size: 1.9rem; /* Slightly adjusted mobile H1 size */
+            text-align: center;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 18px;
+            line-height: 1.25;
+            /* No max-width needed for mobile centered text */
         }
-        @media (max-width: 768px) {
-             .content h1 { font-size: 2rem; text-align: center; max-width: 100%; }
-         }
 
-        /* ***** REVISED SUBTITLE ***** */
         .content p.subtitle {
-            font-size: 1.1rem; color: #555; margin-bottom: 35px; font-weight: 300;
-            max-width: 95%;
+            /* --- Mobile First: Font size and alignment --- */
+            font-size: 1rem; /* Standard mobile text size */
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px; /* Adjusted spacing */
+            font-weight: 300;
+            /* No max-width needed for mobile centered text */
         }
-         @media (max-width: 768px) {
-             .content p.subtitle { font-size: 1rem; text-align: center; max-width: 100%; }
-         }
 
-        /* --- Form Styling --- */
-        .signup-form { display: flex; flex-direction: column; gap: 15px; }
+        /* --- Form Styling (Mostly consistent across sizes) --- */
+        .signup-form { display: flex; flex-direction: column; gap: 15px; width: 100%; }
         .signup-form label {
-            font-weight: 600; margin-bottom: -8px; color: #34495e; font-size: 0.95rem;
+            font-weight: 600; margin-bottom: -8px; color: #34495e; font-size: 0.9rem; /* Slightly smaller label for mobile */
+            text-align: left; /* Keep labels left-aligned */
         }
         .signup-form input[type="email"] {
-            padding: 15px; border: 1px solid #ced4da; border-radius: 8px;
+            padding: 14px; /* Slightly adjusted padding */
+            border: 1px solid #ced4da; border-radius: 8px;
             font-size: 1rem; font-family: inherit; transition: border-color 0.3s ease, box-shadow 0.3s ease;
              background-color: #fdfdfd;
+             width: 100%; /* Ensure full width */
         }
         .signup-form input[type="email"]:focus {
             border-color: #007bff; outline: none; box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
              background-color: #fff;
         }
         .signup-form button {
-            padding: 16px; background-color: #007bff; color: #fff; border: none;
-            border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer;
+            padding: 15px; /* Slightly adjusted padding */
+            background-color: #007bff; color: #fff; border: none;
+            border-radius: 8px; font-size: 1.05rem; /* Slightly adjusted size */
+            font-weight: 600; cursor: pointer;
             transition: background-color 0.3s ease, transform 0.1s ease, opacity 0.3s ease;
              margin-top: 5px;
+             width: 100%; /* Ensure full width */
         }
         .signup-form button:hover { background-color: #0056b3; }
         .signup-form button:active { transform: scale(0.98); }
@@ -91,23 +107,69 @@
         }
         .form-status.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
         .form-status.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
         /* --- Privacy Note --- */
         .privacy-note { font-size: 0.85rem; color: #777; text-align: center; margin-top: 20px; }
         .privacy-note a { color: #007bff; text-decoration: none; }
         .privacy-note a:hover { text-decoration: underline; }
+
+
+        /* --- Tablet & Desktop Styles (Overrides) --- */
+        /* Common breakpoint for tablets */
+        @media (min-width: 768px) {
+            .container {
+                /* Switch to two columns */
+                grid-template-columns: 1fr 1.1fr;
+            }
+
+            .image-side {
+                /* Show the image */
+                display: block;
+                min-height: auto; /* Let grid control height */
+            }
+
+            .content {
+                /* Restore larger padding */
+                padding: 50px 45px;
+            }
+
+             .content h1 {
+                 /* Larger font size, left align */
+                 font-size: 2.4rem;
+                 text-align: left;
+                 max-width: 90%; /* Apply max-width only on larger screens */
+             }
+
+             .content p.subtitle {
+                  /* Larger font size, left align */
+                 font-size: 1.1rem;
+                 text-align: left;
+                 margin-bottom: 35px;
+                 max-width: 95%; /* Apply max-width only on larger screens */
+             }
+
+             .signup-form label {
+                 font-size: 0.95rem; /* Restore label size */
+             }
+              .signup-form input[type="email"],
+              .signup-form button {
+                  padding: 15px; /* Restore padding */
+                  font-size: 1.1rem; /* Restore font size */
+             }
+        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Image Side -->
-        <div class="image-side" role="img" aria-label="Abstract background representing trends and insights"></div> <!-- Updated aria-label -->
+        <!-- Image Side (Hidden on mobile by CSS) -->
+        <div class="image-side" role="img" aria-label="Abstract background representing trends and insights"></div>
 
         <!-- Content Side -->
         <div class="content">
             <h1>Stay Ahead of the Curve with The Trend Report</h1>
 
-            <!-- ***** REVISED SUBTITLE ***** -->
             <p class="subtitle">
                 Navigate constant change with confidence. The Trend Report delivers comprehensive analysis and curated insights into the emerging tech, business, and cultural trends shaping our future. Go beyond the headlines to understand what matters, spot opportunities, and make smarter decisions.
             </p>
@@ -116,7 +178,6 @@
             <form class="signup-form" id="newsletter-form">
                 <label for="email">Your Email Address:</label>
                 <input type="email" id="email" name="email" placeholder="you@example.com" required>
-
                 <button type="submit" id="submit-button">Get the Trend Report</button>
             </form>
             <!-- ****** END OF FORM ****** -->
@@ -130,7 +191,7 @@
         </div>
     </div>
 
-    <!-- ****** JAVASCRIPT FOR FORM SUBMISSION TO GOOGLE SHEETS ****** -->
+    <!-- ****** JAVASCRIPT (No changes needed here) ****** -->
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxUamLOPUMzoHHc2dLrZP4cEiAyZvgYbY9E-AU_ZGkqh-ZQBsM-YSWCugZ2L2B9eKgQ/exec'; // Verify this URL!
         const form = document.getElementById('newsletter-form');
@@ -140,12 +201,10 @@
         form.addEventListener('submit', e => {
             e.preventDefault();
             if (!form.checkValidity()) { form.reportValidity(); return; }
-
             submitButton.disabled = true;
             submitButton.textContent = 'Submitting...';
             statusDiv.style.display = 'none';
             statusDiv.className = 'form-status';
-
             const formData = new FormData(form);
 
             fetch(scriptURL, { method: 'POST', body: formData })
@@ -157,9 +216,7 @@
                         statusDiv.classList.add('success');
                         statusDiv.style.display = 'block';
                         form.reset();
-                    } else {
-                        throw new Error(data.message || 'Submission failed. Please try again.');
-                    }
+                    } else { throw new Error(data.message || 'Submission failed. Please try again.'); }
                 })
                 .catch(error => {
                     console.error('Fetch Error:', error);
