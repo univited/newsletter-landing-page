@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Crucial for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Trend Report | Comprehensive Insights for What's Next</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,12 +10,11 @@
     <style>
         /* --- Basic Reset & Setup --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; } /* Optional: Smooth scroll */
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333;
             background-color: #f8f9fa; display: flex; justify-content: center;
             align-items: center; min-height: 100vh;
-            /* Consistent padding around the container */
             padding: 20px;
         }
 
@@ -27,74 +25,59 @@
             overflow: hidden;
             max-width: 950px; width: 100%;
             display: grid;
-            /* --- Mobile First: Default to single column --- */
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; /* Mobile First: Single column */
         }
 
-        /* --- Image Side --- */
+        /* --- Image Side (Now visible on mobile) --- */
         .image-side {
-             /* Image Option 1: Abstract Gradient/Waves (Current) */
             background: url('https://images.unsplash.com/photo-1531315630201-bb15abeb1653?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80') no-repeat center center/cover;
-            min-height: 250px; /* Adjust height for mobile if needed */
-            /* --- Mobile First: Hide image by default --- */
-            display: none;
+            /* --- Adjust height for mobile --- */
+            min-height: 250px;
+            /* display: none; */ /* REMOVED: Image is now visible by default */
+            width: 100%; /* Ensure it takes full width within its grid area */
         }
 
         /* --- Content Side --- */
         .content {
-             /* --- Mobile First: Optimized padding for smaller screens --- */
-            padding: 40px 25px; /* Reduced L/R padding */
+            padding: 40px 25px; /* Mobile padding */
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         .content h1 {
-            /* --- Mobile First: Font size and alignment --- */
-            font-size: 1.9rem; /* Slightly adjusted mobile H1 size */
-            text-align: center;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 18px;
-            line-height: 1.25;
-            /* No max-width needed for mobile centered text */
+            font-size: 1.9rem; text-align: center;
+            font-weight: 700; color: #2c3e50;
+            margin-bottom: 18px; line-height: 1.25;
         }
 
         .content p.subtitle {
-            /* --- Mobile First: Font size and alignment --- */
-            font-size: 1rem; /* Standard mobile text size */
-            text-align: center;
-            color: #555;
-            margin-bottom: 30px; /* Adjusted spacing */
+            font-size: 1rem; text-align: center;
+            color: #555; margin-bottom: 30px;
             font-weight: 300;
-            /* No max-width needed for mobile centered text */
         }
 
-        /* --- Form Styling (Mostly consistent across sizes) --- */
+        /* --- Form Styling --- */
         .signup-form { display: flex; flex-direction: column; gap: 15px; width: 100%; }
         .signup-form label {
-            font-weight: 600; margin-bottom: -8px; color: #34495e; font-size: 0.9rem; /* Slightly smaller label for mobile */
-            text-align: left; /* Keep labels left-aligned */
+            font-weight: 600; margin-bottom: -8px; color: #34495e; font-size: 0.9rem;
+            text-align: left;
         }
         .signup-form input[type="email"] {
-            padding: 14px; /* Slightly adjusted padding */
-            border: 1px solid #ced4da; border-radius: 8px;
+            padding: 14px; border: 1px solid #ced4da; border-radius: 8px;
             font-size: 1rem; font-family: inherit; transition: border-color 0.3s ease, box-shadow 0.3s ease;
-             background-color: #fdfdfd;
-             width: 100%; /* Ensure full width */
+             background-color: #fdfdfd; width: 100%;
         }
         .signup-form input[type="email"]:focus {
             border-color: #007bff; outline: none; box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
              background-color: #fff;
         }
         .signup-form button {
-            padding: 15px; /* Slightly adjusted padding */
-            background-color: #007bff; color: #fff; border: none;
-            border-radius: 8px; font-size: 1.05rem; /* Slightly adjusted size */
+            padding: 15px; background-color: #007bff; color: #fff; border: none;
+            border-radius: 8px; font-size: 1.05rem;
             font-weight: 600; cursor: pointer;
             transition: background-color 0.3s ease, transform 0.1s ease, opacity 0.3s ease;
-             margin-top: 5px;
-             width: 100%; /* Ensure full width */
+             margin-top: 5px; width: 100%;
         }
         .signup-form button:hover { background-color: #0056b3; }
         .signup-form button:active { transform: scale(0.98); }
@@ -115,7 +98,6 @@
 
 
         /* --- Tablet & Desktop Styles (Overrides) --- */
-        /* Common breakpoint for tablets */
         @media (min-width: 768px) {
             .container {
                 /* Switch to two columns */
@@ -123,9 +105,9 @@
             }
 
             .image-side {
-                /* Show the image */
-                display: block;
-                min-height: auto; /* Let grid control height */
+                 /* --- Image height adjusts naturally in grid --- */
+                min-height: auto;
+                /* display: block; */ /* REMOVED: No longer needed */
             }
 
             .content {
@@ -134,27 +116,19 @@
             }
 
              .content h1 {
-                 /* Larger font size, left align */
-                 font-size: 2.4rem;
-                 text-align: left;
-                 max-width: 90%; /* Apply max-width only on larger screens */
+                 font-size: 2.4rem; text-align: left; max-width: 90%;
              }
 
              .content p.subtitle {
-                  /* Larger font size, left align */
-                 font-size: 1.1rem;
-                 text-align: left;
-                 margin-bottom: 35px;
-                 max-width: 95%; /* Apply max-width only on larger screens */
+                 font-size: 1.1rem; text-align: left; margin-bottom: 35px; max-width: 95%;
              }
 
              .signup-form label {
-                 font-size: 0.95rem; /* Restore label size */
+                 font-size: 0.95rem;
              }
               .signup-form input[type="email"],
               .signup-form button {
-                  padding: 15px; /* Restore padding */
-                  font-size: 1.1rem; /* Restore font size */
+                  padding: 15px; font-size: 1.1rem;
              }
         }
 
@@ -163,7 +137,7 @@
 <body>
 
     <div class="container">
-        <!-- Image Side (Hidden on mobile by CSS) -->
+        <!-- Image Side (Now visible on mobile too) -->
         <div class="image-side" role="img" aria-label="Abstract background representing trends and insights"></div>
 
         <!-- Content Side -->
