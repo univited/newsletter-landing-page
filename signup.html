@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Our Newsletter!</title>
+    <title>The Trend Report | Comprehensive Insights for What's Next</title> <!-- Updated Title -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -18,58 +18,81 @@
         /* --- Main Container --- */
         .container {
             background-color: #ffffff; border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
             max-width: 950px; width: 100%; display: grid; grid-template-columns: 1fr;
         }
-        @media (min-width: 768px) { .container { grid-template-columns: 1fr 1fr; } }
-        /* --- Image Side --- */
+        @media (min-width: 768px) { .container { grid-template-columns: 1fr 1.1fr; } }
+
+        /* --- Image Side (Updated Image Options) --- */
         .image-side {
-            /* Consider adding your own relevant image URL here */
-            background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
+            /* Option 1: Abstract Gradient/Waves (Current) */
+            background: url('https://images.unsplash.com/photo-1531315630201-bb15abeb1653?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80') no-repeat center center/cover;
+
+            /* Option 2: Subtle Network/Connection (Replace URL above if you prefer this) */
+            /* background: url('https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover; */
+
+            /* Option 3: Minimalist Landscape/Horizon (Replace URL above if you prefer this) */
+            /* background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover; */
+
             min-height: 300px; display: none;
         }
         @media (min-width: 768px) { .image-side { display: block; min-height: auto; } }
+
         /* --- Content Side --- */
         .content { padding: 40px 30px; display: flex; flex-direction: column; justify-content: center; }
-        @media (min-width: 768px) { .content { padding: 50px 40px; } }
+        @media (min-width: 768px) { .content { padding: 50px 45px; } }
+
         .content h1 {
-            font-size: 2.2rem; font-weight: 700; color: #2c3e50;
-            margin-bottom: 15px; line-height: 1.2;
+            font-size: 2.4rem; font-weight: 700; color: #2c3e50;
+            margin-bottom: 18px; line-height: 1.25; max-width: 90%;
         }
-        @media (max-width: 768px) { .content h1 { font-size: 1.8rem; text-align: center; } }
+        @media (max-width: 768px) {
+             .content h1 { font-size: 2rem; text-align: center; max-width: 100%; }
+         }
+
+        /* ***** REVISED SUBTITLE ***** */
         .content p.subtitle {
-            font-size: 1.1rem; color: #555; margin-bottom: 30px; font-weight: 300;
+            font-size: 1.1rem; color: #555; margin-bottom: 35px; font-weight: 300;
+            max-width: 95%;
         }
-        @media (max-width: 768px) { .content p.subtitle { font-size: 1rem; text-align: center; } }
+         @media (max-width: 768px) {
+             .content p.subtitle { font-size: 1rem; text-align: center; max-width: 100%; }
+         }
+
         /* --- Form Styling --- */
         .signup-form { display: flex; flex-direction: column; gap: 15px; }
         .signup-form label {
-            font-weight: 600; margin-bottom: -10px; color: #34495e; font-size: 0.9rem;
+            font-weight: 600; margin-bottom: -8px; color: #34495e; font-size: 0.95rem;
         }
         .signup-form input[type="email"] {
             padding: 15px; border: 1px solid #ced4da; border-radius: 8px;
             font-size: 1rem; font-family: inherit; transition: border-color 0.3s ease, box-shadow 0.3s ease;
+             background-color: #fdfdfd;
         }
         .signup-form input[type="email"]:focus {
             border-color: #007bff; outline: none; box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+             background-color: #fff;
         }
         .signup-form button {
-            padding: 15px; background-color: #007bff; color: #fff; border: none;
+            padding: 16px; background-color: #007bff; color: #fff; border: none;
             border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer;
             transition: background-color 0.3s ease, transform 0.1s ease, opacity 0.3s ease;
+             margin-top: 5px;
         }
         .signup-form button:hover { background-color: #0056b3; }
         .signup-form button:active { transform: scale(0.98); }
         .signup-form button:disabled { background-color: #a0cfff; cursor: not-allowed; opacity: 0.7; }
+
         /* --- Status Message Styling --- */
         .form-status {
             margin-top: 15px; padding: 12px; border-radius: 6px; text-align: center;
-            font-size: 0.95rem; display: none; /* Hidden by default */
+            font-size: 0.95rem; display: none;
         }
         .form-status.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
         .form-status.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
         /* --- Privacy Note --- */
-        .privacy-note { font-size: 0.85rem; color: #777; text-align: center; margin-top: 15px; }
+        .privacy-note { font-size: 0.85rem; color: #777; text-align: center; margin-top: 20px; }
         .privacy-note a { color: #007bff; text-decoration: none; }
         .privacy-note a:hover { text-decoration: underline; }
     </style>
@@ -78,22 +101,23 @@
 
     <div class="container">
         <!-- Image Side -->
-        <div class="image-side" role="img" aria-label="Abstract image representing newsletter content"></div>
+        <div class="image-side" role="img" aria-label="Abstract background representing trends and insights"></div> <!-- Updated aria-label -->
 
         <!-- Content Side -->
         <div class="content">
-            <h1>Stay Ahead of the Curve!</h1>
+            <h1>Stay Ahead of the Curve with The Trend Report</h1>
+
+            <!-- ***** REVISED SUBTITLE ***** -->
             <p class="subtitle">
-                Subscribe to our newsletter and get the latest insights, tips, and updates delivered straight to your inbox. Don't miss out!
+                Navigate constant change with confidence. The Trend Report delivers comprehensive analysis and curated insights into the emerging tech, business, and cultural trends shaping our future. Go beyond the headlines to understand what matters, spot opportunities, and make smarter decisions.
             </p>
 
             <!-- ****** NEWSLETTER SIGNUP FORM ****** -->
-            <!-- Form submission is handled by JavaScript below -->
             <form class="signup-form" id="newsletter-form">
-                <label for="email">Enter your email address:</label>
+                <label for="email">Your Email Address:</label>
                 <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-                <button type="submit" id="submit-button">Subscribe Now</button>
+                <button type="submit" id="submit-button">Get the Trend Report</button>
             </form>
             <!-- ****** END OF FORM ****** -->
 
@@ -101,68 +125,51 @@
             <div id="form-status" class="form-status"></div>
 
             <p class="privacy-note">
-                We respect your privacy. No spam, ever.
-                <!-- Optional: <a href="/privacy-policy">Privacy Policy</a> -->
+                We respect your privacy. Unsubscribe anytime.
             </p>
         </div>
     </div>
 
     <!-- ****** JAVASCRIPT FOR FORM SUBMISSION TO GOOGLE SHEETS ****** -->
     <script>
-        // =========================================================================
-        // === PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW =====================
-        // =========================================================================
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxUamLOPUMzoHHc2dLrZP4cEiAyZvgYbY9E-AU_ZGkqh-ZQBsM-YSWCugZ2L2B9eKgQ/exec';
-        // =========================================================================
-
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxUamLOPUMzoHHc2dLrZP4cEiAyZvgYbY9E-AU_ZGkqh-ZQBsM-YSWCugZ2L2B9eKgQ/exec'; // Verify this URL!
         const form = document.getElementById('newsletter-form');
         const submitButton = document.getElementById('submit-button');
         const statusDiv = document.getElementById('form-status');
 
         form.addEventListener('submit', e => {
-            e.preventDefault(); // Prevent the default form submission
+            e.preventDefault();
+            if (!form.checkValidity()) { form.reportValidity(); return; }
 
-            // Basic validation feedback (HTML5 'required' handles basic presence)
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-
-            // Disable button and show submitting state
             submitButton.disabled = true;
             submitButton.textContent = 'Submitting...';
-            statusDiv.style.display = 'none'; // Hide previous messages
-            statusDiv.className = 'form-status'; // Reset classes
-
+            statusDiv.style.display = 'none';
+            statusDiv.className = 'form-status';
 
             const formData = new FormData(form);
 
             fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => response.json()) // Parse the JSON response from Apps Script
+                .then(response => response.json())
                 .then(data => {
-                    console.log('Google Apps Script Response:', data); // Log the raw response for debugging
+                    console.log('Google Apps Script Response:', data);
                     if (data.result === 'success') {
-                        // Display success message
-                        statusDiv.textContent = 'Success! Thanks for subscribing.';
+                        statusDiv.textContent = "Success! Welcome to The Trend Report. Check your inbox!";
                         statusDiv.classList.add('success');
                         statusDiv.style.display = 'block';
-                        form.reset(); // Clear the form
+                        form.reset();
                     } else {
-                        // Display error message from Apps Script or a generic one
                         throw new Error(data.message || 'Submission failed. Please try again.');
                     }
                 })
                 .catch(error => {
                     console.error('Fetch Error:', error);
-                    // Display error message
                     statusDiv.textContent = 'Error: Could not subscribe. ' + error.message;
                     statusDiv.classList.add('error');
                     statusDiv.style.display = 'block';
                 })
                 .finally(() => {
-                    // Re-enable button regardless of success or error
                     submitButton.disabled = false;
-                    submitButton.textContent = 'Subscribe Now';
+                    submitButton.textContent = 'Get the Trend Report';
                 });
         });
     </script>
